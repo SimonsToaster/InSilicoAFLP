@@ -6,7 +6,7 @@ cut_index = 5
 adaptor_seqence = "GACGATGAGTCCTGAG"
 
 pcr_sequence = "TACTCAGGACTC"
-select_bases = "ATC"
+select_bases = "CCT"
 
 path_genome = "Support\\GCA_034370585.1_ASM3437058v1_genomic.fasta"
 
@@ -22,7 +22,6 @@ import os
 import re
 import matplotlib.pyplot as plt
 import numpy as np
-
 
 #2.2 Program 
 
@@ -73,8 +72,10 @@ print("Number of fragments by restriction:", len(restriction_fragments))
 selected_fragments = []
 selector_sequence_5prime = recognition_site[cut_index:len(recognition_site)] + select_bases
 print("Selector sequence at 5 end of sequence", selector_sequence_5prime)
+
 complement_select_bases = select_bases.translate(str.maketrans("ATGC", "TACG"))
 print("Complement_sequence", complement_select_bases)
+
 selector_sequence_3prime = complement_select_bases + recognition_site[0:cut_index]
 print("Selector sequence at 3 end of sequence", selector_sequence_3prime)
 
@@ -94,7 +95,7 @@ print("number of amplicons without size selection:", len(selected_fragments))
 lenghts_amplicons = []
 for fragment in selected_fragments:
     potential_amplicon = len(fragment)+2*len(pcr_sequence)
-    if potential_amplicon <= 2100 and potential_amplicon >= 260:
+    if potential_amplicon <= 5000 and potential_amplicon >= 100:
         lenghts_amplicons.append(potential_amplicon)
 
 print(lenghts_amplicons)
