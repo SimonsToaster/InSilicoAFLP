@@ -84,16 +84,16 @@ def generate_triple_digests(enzyme_list):
 
     return triplets
 
-def convert_recognition_sequence(rec_cut_sequence):
+def convert_recognition_sequence(recognition_cut_sequence):
     #Function takes a recognition seqeunce with indicated cut position and returns 
     #a clean recognition seqeunce and the cut indices. 
 
-    clean_rec_sequence = rec_cut_sequence.replace("/", "")
+    clean_recognition_sequence = recognition_cut_sequence.replace("/", "")
     
-    match = re.search("/", rec_cut_sequence)
+    match = re.search("/", recognition_cut_sequence)
     cut_index = match.start()
 
-    return [clean_rec_sequence, cut_index]
+    return [clean_recognition_sequence, cut_index]
 
 def expand_selective_bases(sequence):
     #This function takes a seqeunce of nuclotides according to IUPAC numencalture
@@ -113,90 +113,132 @@ def five_prime_ends(recognition_seqeunce, cut_index, selective_bases):
 
     rec_site_fragment = recognition_seqeunce[cut_index:len(recognition_seqeunce)]
 
-    for sequence in selective_bases:
+    if type(selective_bases) == str:
+        selective_bases_list = [selective_bases]
+
+    for sequence in selective_bases_list:
         five_prime_end = rec_site_fragment + sequence
         five_prime_ends_list.append(five_prime_end)
 
     return five_prime_ends_list
 
 def three_prime_ends(recognition_seqeunce, cut_index, selective_bases):
-    #This function takes a recognition seqeunce and cut index of a Restriction enyzme and a list of selective bases and creates the matching seqeunces for the 3' end
+    #This function takes a recognition sequence and cut index of a restriction enyzme and a list of selective bases and creates the matching seqeunces for the 3' end
     #of fragments
 
     three_prime_ends_list = []
 
     rec_site_fragment = recognition_seqeunce[0:cut_index]
 
-    for sequence in selective_bases:
+    if type(selective_bases) == str:
+        selective_bases_list = [selective_bases]
+
+    for sequence in selective_bases_list:
         complement_selective_bases = sequence.translate(str.maketrans("ATGC", "TACG"))
         three_prime_end = complement_selective_bases + rec_site_fragment
         three_prime_ends_list.append(three_prime_end)
 
     return three_prime_ends_list
 
-def primer_extention(primer_seqeunce, cut_index):
+def five_prime_end(recognition_seqeunce, cut_index, selective_bases):
+    #This function takes a recognition seqeunce and cut index of a Restriction enyzme and selective bases and creates the matching seqeunces for the 5' end
+    #of fragments
+
+    rec_site_fragment = recognition_seqeunce[cut_index:len(recognition_seqeunce)]
+    five_prime_end = rec_site_fragment + selective_bases
+
+    return five_prime_end
+
+def three_prime_end(recognition_seqeunce, cut_index, selective_bases):
+    #This function takes a recognition sequence and cut index of a restriction enyzme and selective bases and creates the matching seqeunces for the 3' end
+    #of fragments
+    
+    rec_site_fragment = recognition_seqeunce[0:cut_index]
+    complement_selective_bases = selective_bases.translate(str.maketrans("ATGC", "TACG"))
+    three_prime_end = complement_selective_bases + rec_site_fragment
+
+    return three_prime_end
+
+def match_dictionary(recognition_sequence, cut_index, selective_bases):
+    #This function takes a recognitin sequenc and cut site of a restriction enzyme and selective bases and returns a dictionary with the selective bases as keys and the 5' and 3' matching ends as values
+    
+    selective_bases_list = expand_selective_bases(selective_bases)
+
+    match_dictionary = {entry: [] for entry in selective_bases_list}
+
+    for key in match_dictionary:
+        five_match = five_prime_end(recognition_sequence, cut_index, key)
+        three_match = three_prime_end(recognition_sequence, cut_index, key)
+        match_dictionary[key].append(five_match)
+        match_dictionary[key].append(three_match)
+
+    return match_dictionary
+
+def five_primer_extention(primer_seqeunce, cut_index):
     #This fucntion takes primer and recognition sequence and cut index to generate the 5' and 3' extention of the amplicon
 
     five_prime_extension = primer_seqeunce[0:(len(primer_seqeunce)-cut_index)]
+
+    return five_prime_extension
+
+def three_primer_extention(primer_seqeunce, cut_index):
+    #This function takes primer and recognition sequence and cut index to generate the 5' and 3' extention of the amplicon
 
     reversed_primer = primer_seqeunce[::-1]
     reversed_complement = reversed_primer.translate(str.maketrans("ATGC", "TACG"))
     three_primer_extension = reversed_complement[cut_index:]
 
-    return [five_prime_extension, three_primer_extension]
+    return three_primer_extension
 
-def job_queue(space):
-    #This function gets the search space and creates a list of all possible combinations of 
-    #REs adn bases to generate reports from.
+def create_enzyme_dictionary(enzyme_instruction_data):
+    #This function takes the enzyme/primer data specified by the user in the instruction file and creates the enzyme dictionary with all required information for
+    #creation of the job queue and calcualtion of the findgerprints
 
-    space_list = space
+    #Create dictionary with enzyme names as keys
+    enzyme_instruction_dictionary = {entry[0]: entry[1:] for entry in enzyme_instruction_data}
 
-    for entry in space_list:
-        seq_and_index = convert_recognition_sequence(entry[1])
-        entry[1] = seq_and_index[0]
-        entry.insert(2, seq_and_index[1])
+    for enzyme, data in enzyme_instruction_dictionary.items():
+        #Convert recognition seqeunce into clear seqeunce and cut index
+        sequence_and_cutindex = convert_recognition_sequence(data[0])
+        data[0] = sequence_and_cutindex[0]
+        data.insert(1, sequence_and_cutindex[1])
 
-    for entry in space_list:
-        expand_selective_bases_list = expand_selective_bases(entry[-1])
-        entry[-1] = expand_selective_bases_list
+        #Expand the degenerated coding of selective bases into propper sequences and create
+        #5' and 3' match seqeunces, stored in dictionary:
+        match_dict = match_dictionary(data[0], data[1], data[-1])
+        data[-1] = match_dict
+
+        #Create the 5' and 3' primer extensions
+        five_extension = five_primer_extention(data[6], data[1])
+        data.insert(7, five_extension)
+        three_extension = three_primer_extention(data[6], data[1])
+        data.insert(8, three_extension)
+
+    return enzyme_instruction_dictionary
+
+
+def job_queue(enzyme_dictionary, mode):
+    #This function takes the enzyme dictionary, the mode and creates a job dictionary. Key is the names of the enzymes in the digest, value is a library with the enzyme data and the matching seqeunces
     
-    for entry in space_list:
-        five_prime_ends_list = five_prime_ends(entry[1], entry[2], entry[8])
-        entry.append(five_prime_ends_list)
+    if mode == "single":
+        sys.exit("not defined yet")
+    elif mode == "double":
+        sys.exit("not defined yet")
+    elif mode == "triple":
+        #create all digest combinations
+        enzymes = enzyme_dictionary.keys()
 
-    for entry in space_list:
-        three_prime_ends_list = three_prime_ends(entry[1], entry[2], entry[8])
-        entry.append(three_prime_ends_list)
+        print(enzymes)
+
+        triple_digests = generate_triple_digests(enzymes)
+
+        print(triple_digests)
+
+        job_dict = {tuple(triplet): triplet for triplet in triple_digests}
+
+        
     
-    for entry in space_list:
-        extensions = primer_extention(entry[7], entry[2])
-        entry.append(extensions[0])
-        entry.append(extensions[1])
-
-    print(space_list)
-
-    enzyme_list = []
-
-    for entry in space_list:
-        enzyme_list.append(entry[0])
-
-    if mode == "triple":
-        enzyme_jobs = generate_triple_digests(enzyme_list)
-
-
-
-    jobs = []
-    for entry in enzyme_jobs:
-        jobs.append(entry)
-
-    for entry in jobs:
-        for enzyme in entry[0]:
-            
-
-
-
-
-    return jobs
+    return job_dict
 
 #### Script Script Script ####
 
@@ -215,13 +257,15 @@ lower_limit = 200
 resolution = 0.1
 
 ##SPACE
-space = [["PstI", "CTGCA/G", "PstI Adaptor 1", "CTCGTAGACTGCGTACATGCA", "CATCTGACGCATGT",  "PstI Primer 1", "GACTGCGTACATGCAG", "ATY"],
-         ["EcoRI", "G/AATTC", "EcoRI Adaptor 1", "CTCGTAGACTGCGTACC", "AATTGGTACGCAGTCTAC", "EcoRI Primer 1", "GACTGCGTACCAATTC", "ATY"],
-         ["MseI", "T/TAA", "MseI Adaptor 1", "GACGATGAGTCCTGAG", "TACTCAGGACTCAT", "Mse1 Primer 1", "GATGAGTCCTGAGTAA", "ATY"]]
+enzyme_instruction_data = [["PstI", "CTGCA/G", "PstI Adaptor 1", "CTCGTAGACTGCGTACATGCA", "CATCTGACGCATGT",  "PstI Primer 1", "GACTGCGTACATGCAG", "ATY"],
+                           ["EcoRI", "G/AATTC", "EcoRI Adaptor 1", "CTCGTAGACTGCGTACC", "AATTGGTACGCAGTCTAC", "EcoRI Primer 1", "GACTGCGTACCAATTC", "ATY"],
+                           ["MseI", "T/TAA", "MseI Adaptor 1", "GACGATGAGTCCTGAG", "TACTCAGGACTCAT", "Mse1 Primer 1", "GATGAGTCCTGAGTAA", "ATY"]]
 
 restriction_library = [["PstI", "CTGCAG", 5]]
 
 selection_library = []
+
+mode = "triple"
 
 #The Script
 
@@ -236,10 +280,11 @@ fragment_library = [sequence]
 
 ##Construct the job queue
 
-job_queue_list = job_queue(space)
+enzyme_dictionary = create_enzyme_dictionary(enzyme_instruction_data)
 
-print(job_queue_list)
+jobs = job_queue(enzyme_dictionary, mode)
 
+print(jobs)
 
 ##Work over the search space
 
