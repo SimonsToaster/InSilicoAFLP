@@ -1,0 +1,44 @@
+INSTRUCTION FILE INSILICOAFLP
+#---------------------------#
+GENERAL:
+mode = 
+best = 
+method = 
+ELECTROPHORESIS
+upper_limit =
+lower_limit =
+resolution =
+Ladder = 
+Space:
+NameRE;recognition_site;adaptor_name;adaptor_sequence;primer_name;primer_core;selective_bases
+
+Test space:
+
+
+
+EXPLANATIONS:
+mode: 		"optimize": looks for the n best combinations of restriction enzymes and selective bases creating the fingerprint with the least amount of overlapping bands
+		"test": creates a fingerprint from the given entries in the search space
+best:		the n best results of optimization for the report
+method:		how many enyzmes are used in the digest
+		"single"
+		"double"
+		"triple"
+upper_limit:	Upper limit for electrophoresis resolution, longer fragments are discarded
+lower_limit:	Lower limit for the electrophoresis resolution, smaller fragments are discarded
+resolution:	Size difference between fragments in percent which do not overlap
+Ladder:		Fragments size of fragments in the electrophoresis ladder
+Space:		Information on restriction enzymes and the associated primers
+		NameRE:			just the name of the restriction enyzme for the report
+		recognition_site	Recognition site of the restriction enzyme with the cut site indicated by a / or ^. Only ACGT is accepted
+		adaptor_name		Adaptor name for the report
+		adaptor_seqeunence	Required to make fragments of correct length and seqeunce, only ACGTN are accepted.
+		primer_name		Primer name for report
+		primer_core		Primer core sequence, adaptor+recognition site enzyme. Only ACGTN are accepted
+		selective_bases		A 1 to 3 nuclotide long specification of the selective bases, follows IUPAC nomenclature. If mode is test only ACTG are accepted. 
+
+In mode "optimization" the script constructs a search queue with all possible combinations of restriction enzyme and primers for the report. Be carefull not to overlaod it.
+
+Test sapce:	lines from the space to be combined to create combinations for which fingerprints are to be generated. 
+
+		

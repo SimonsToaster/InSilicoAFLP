@@ -3,12 +3,12 @@
 recognition_site = "CTGCAG"
 cut_index = 5
 
-adaptor_seqence = "GACGATGAGTCCTGAG"
+adaptor_seqence = "CTCGTAGACTGCGTACATGCA"
 
 pcr_sequence = "TACTCAGGACTC"
 select_bases = "ATC"
 
-path_genome = "Support\\GCA_034370585.1_ASM3437058v1_genomic.fasta"
+path_genome = "Support\\ECPlambda.fasta"
 
 #Thermo Scientific GeneRuler DNA Ladder Mix
 DNA_ladder = [10000, 8000, 6000, 5000, 4000, 3500, 3000, 2500, 2000, 1500, 1200, 1000, 900, 800, 600, 500, 400, 300, 200, 100]
@@ -37,7 +37,7 @@ with open(full_path_genome, "r") as file:
     genome_raw = file.read()
     genome = genome_raw.replace('\n', '').upper()
 
-#2.2.2 Find leght of amplified fragments
+#2.2.2 Find length of amplified fragments
 #Find position of recognition sites in genome
 
 index_recognition_sites = [m.start() for m in re.finditer(recognition_site, genome)]
