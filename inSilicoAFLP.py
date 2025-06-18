@@ -191,7 +191,7 @@ def job_queue(space):
 
     for entry in jobs:
         for enzyme in entry[0]:
-            
+
 
 
 
