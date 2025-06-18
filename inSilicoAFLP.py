@@ -235,42 +235,8 @@ def job_queue(enzyme_dictionary, mode):
         print(triple_digests)
 
         job_dict = {tuple(triplet): triplet for triplet in triple_digests}
-
         
-    
-<<<<<<< HEAD
-    for entry in space_list:
-        extensions = primer_extention(entry[7], entry[2])
-        entry.append(extensions[0])
-        entry.append(extensions[1])
-
-    print(space_list)
-
-    enzyme_list = []
-
-    for entry in space_list:
-        enzyme_list.append(entry[0])
-
-    if mode == "triple":
-        enzyme_jobs = generate_triple_digests(enzyme_list)
-
-
-
-    jobs = []
-    for entry in enzyme_jobs:
-        jobs.append(entry)
-
-    for entry in jobs:
-        for enzyme in entry[0]:
-
-
-
-
-
-    return jobs
-=======
     return job_dict
->>>>>>> d81e45f086f076a3acb7047847ebb5b70db5c3f9
 
 #### Script Script Script ####
 
@@ -298,6 +264,23 @@ restriction_library = [["PstI", "CTGCAG", 5]]
 selection_library = []
 
 mode = "triple"
+
+enyzme_data = {"PstI": ["PstI", "CTGCAG", 5],
+               "EcoRI": ["EcoRI", "GAATTC", 1],
+               "MseI": ["MseI", "TTAA", 1]}
+
+
+adaptor_data = {"PstI Adaptor 1": ["PstI Adaptor 1", "PstI", "CTCGTAGACTGCGTACATGCA", "CATCTGACGCATGT"],
+                "EcoRI Adaptor 1": ["EcoRI Adaptor 1", "EcoRI", "CTCGTAGACTGCGTACC", "AATTGGTACGCAGTCTAC"],
+                "MseI Adaptor 1":["MseI Adaptor 1", "MseI", "GACGATGAGTCCTGAG", "TACTCAGGACTCAT"]}
+
+primer_data = {"PstI Primer 1": ["PstI Primer 1", "PstI", "GACTGCGTACATGCAG", "ATY"],
+               "EcoRI Primer 1": ["EcoRI Primer 1", "EcoRI", "GACTGCGTACCAATTC", "ATY"],
+               "Mse1 Primer 1": ["Mse1 Primer 1", "MseI", "GATGAGTCCTGAGTAA", "ATY"]}
+
+Jobs = [["PstI", "PstI Adaptor 1", "PstI Primer 1"],
+        ["PstI+EcoRI" "PstI Adaptor 1+EcoRI Adaptor 1", "PstI Primer 1+EcoRI Primer 1"],
+        ["PstI+EcoRI+MseI" "PstI Adaptor 1+EcoRI Adaptor 1", "PstI Primer 1+EcoRI Primer 1"]]
 
 #The Script
 

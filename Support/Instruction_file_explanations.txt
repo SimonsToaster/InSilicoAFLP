@@ -8,11 +8,32 @@ ELECTROPHORESIS
 upper_limit =
 lower_limit =
 resolution =
-Ladder = 
-Space:
-NameRE;recognition_site;adaptor_name;adaptor_sequence_1;adaptor_seqeunce_2;primer_name;primer_core;selective_bases
+Ladder =
 
-Test space:
+DATA
+ENZYME DATA
+Name_RE;recognition_site
+PstI;CTGCA/G
+EcoRI;G/AATTC
+MseI;T/TAA
+
+ADAPTOR DATA
+Name_adaptor;Name_RE;adaptor_sequence_1;adaptor_sequence2
+PstI Adaptor 1;PstI;CTCGTAGACTGCGTACATGCA;CATCTGACGCATGT
+EcoRI Adaptor 1;EcoRI;CTCGTAGACTGCGTACC;AATTGGTACGCAGTCTAC
+MseI Adaptor 1;GACGATGAGTCCTGAG;TACTCAGGACTCAT
+
+PRIMER_DATA
+Primer_name;NameRE;Primer_core_seqeunce;selective_bases
+PstI Primer 1;PstI;GACTGCGTACATGCAG;ATY
+EcoRI Primer 1;EcoRI;GACTGCGTACCAATTC;ATY
+MseI Primer 1;MseI;GATGAGTCCTGAGTAA;ATY
+
+JOBS
+Names_RE;Names_adaptors;Names_primers
+PstI;PstI Adaptor 1;PstI Primer 1
+PstI+EcoRI;PstI Adaptor 1+EcoRI Adaptor 1;PstI Primer 1+EcoRI Primer 1
+PstI+EcoRI+MseI;PstI Adaptor 1+EcoRI Adaptor 1;PstI Primer 1+EcoRI Primer 1
 
 
 
