@@ -8,11 +8,32 @@ ELECTROPHORESIS
 upper_limit =
 lower_limit =
 resolution =
-Ladder = 
-Space:
-NameRE;recognition_site;adaptor_name;adaptor_sequence;primer_name;primer_core;selective_bases
+Ladder =
 
-Test space:
+DATA
+ENZYME DATA
+Name_RE;recognition_site
+PstI;CTGCA/G
+EcoRI;G/AATTC
+MseI;T/TAA
+
+ADAPTOR DATA
+Name_adaptor;Name_RE;adaptor_sequence_1;adaptor_sequence2
+PstI Adaptor 1;PstI;CTCGTAGACTGCGTACATGCA;CATCTGACGCATGT
+EcoRI Adaptor 1;EcoRI;CTCGTAGACTGCGTACC;AATTGGTACGCAGTCTAC
+MseI Adaptor 1;GACGATGAGTCCTGAG;TACTCAGGACTCAT
+
+PRIMER_DATA
+Primer_name;NameRE;Primer_core_seqeunce;selective_bases
+PstI Primer 1;PstI;GACTGCGTACATGCAG;ATY
+EcoRI Primer 1;EcoRI;GACTGCGTACCAATTC;ATY
+MseI Primer 1;MseI;GATGAGTCCTGAGTAA;ATY
+
+JOBS
+Names_RE;Names_adaptors;Names_primers
+PstI;PstI Adaptor 1;PstI Primer 1
+PstI+EcoRI;PstI Adaptor 1+EcoRI Adaptor 1;PstI Primer 1+EcoRI Primer 1
+PstI+EcoRI+MseI;PstI Adaptor 1+EcoRI Adaptor 1;PstI Primer 1+EcoRI Primer 1
 
 
 
@@ -30,9 +51,10 @@ resolution:	Size difference between fragments in percent which do not overlap
 Ladder:		Fragments size of fragments in the electrophoresis ladder
 Space:		Information on restriction enzymes and the associated primers
 		NameRE:			just the name of the restriction enyzme for the report
-		recognition_site	Recognition site of the restriction enzyme with the cut site indicated by a / or ^. Only ACGT is accepted
+		recognition_site	Recognition site of the restriction enzyme with the cut site indicated by a /. Only ACGT is accepted
 		adaptor_name		Adaptor name for the report
-		adaptor_seqeunence	Required to make fragments of correct length and seqeunce, only ACGTN are accepted.
+		adaptor_seqeuence_1	Required to make fragments of correct length and seqeunce, only ACGTN are accepted. Upper strand
+		adaptor_sequence_2	As adaptor_seqeuence_1 but lower strand
 		primer_name		Primer name for report
 		primer_core		Primer core sequence, adaptor+recognition site enzyme. Only ACGTN are accepted
 		selective_bases		A 1 to 3 nuclotide long specification of the selective bases, follows IUPAC nomenclature. If mode is test only ACTG are accepted. 
@@ -41,4 +63,6 @@ In mode "optimization" the script constructs a search queue with all possible co
 
 Test sapce:	lines from the space to be combined to create combinations for which fingerprints are to be generated. 
 
-		
+CTCGTAGACTGCGTACATGCA
+GACGATGAGTCCTGAG
+CATCTGACGCATGT		

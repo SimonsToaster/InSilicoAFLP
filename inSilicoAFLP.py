@@ -263,6 +263,23 @@ selection_library = []
 
 mode = "triple"
 
+enyzme_data = {"PstI": ["PstI", "CTGCAG", 5],
+               "EcoRI": ["EcoRI", "GAATTC", 1],
+               "MseI": ["MseI", "TTAA", 1]}
+
+
+adaptor_data = {"PstI Adaptor 1": ["PstI Adaptor 1", "PstI", "CTCGTAGACTGCGTACATGCA", "CATCTGACGCATGT"],
+                "EcoRI Adaptor 1": ["EcoRI Adaptor 1", "EcoRI", "CTCGTAGACTGCGTACC", "AATTGGTACGCAGTCTAC"],
+                "MseI Adaptor 1":["MseI Adaptor 1", "MseI", "GACGATGAGTCCTGAG", "TACTCAGGACTCAT"]}
+
+primer_data = {"PstI Primer 1": ["PstI Primer 1", "PstI", "GACTGCGTACATGCAG", "ATY"],
+               "EcoRI Primer 1": ["EcoRI Primer 1", "EcoRI", "GACTGCGTACCAATTC", "ATY"],
+               "Mse1 Primer 1": ["Mse1 Primer 1", "MseI", "GATGAGTCCTGAGTAA", "ATY"]}
+
+Jobs = [["PstI", "PstI Adaptor 1", "PstI Primer 1"],
+        ["PstI+EcoRI" "PstI Adaptor 1+EcoRI Adaptor 1", "PstI Primer 1+EcoRI Primer 1"],
+        ["PstI+EcoRI+MseI" "PstI Adaptor 1+EcoRI Adaptor 1", "PstI Primer 1+EcoRI Primer 1"]]
+
 #The Script
 
 ##Read seqeunce

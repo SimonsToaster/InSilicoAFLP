@@ -6,7 +6,7 @@ cut_index = 5
 adaptor_seqence = "CTCGTAGACTGCGTACATGCA"
 
 pcr_sequence = "TACTCAGGACTC"
-select_bases = "CCT"
+select_bases = "G"
 
 path_genome = "Support\\ECPlambda.fasta"
 
@@ -83,7 +83,7 @@ for fragment in restriction_fragments:
     if str(fragment).startswith(selector_sequence_5prime) and str(fragment).endswith(selector_sequence_3prime):
         selected_fragments.append(fragment)
 
-print(selected_fragments[1])
+#print(selected_fragments[1])
 print("number of amplicons without size selection:", len(selected_fragments))
 
 
