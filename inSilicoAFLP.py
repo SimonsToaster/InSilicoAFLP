@@ -227,14 +227,10 @@ def job_queue(enzyme_dictionary, mode):
     elif mode == "triple":
         #create all digest combinations
         enzymes = enzyme_dictionary.keys()
-
-        print(enzymes)
-
         triple_digests = generate_triple_digests(enzymes)
-
-        print(triple_digests)
-
         job_dict = {tuple(triplet): triplet for triplet in triple_digests}
+
+        #Create all matching sequence combinations
 
         
     
