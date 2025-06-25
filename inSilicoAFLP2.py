@@ -6,7 +6,6 @@ import sys
 import os
 import re
 import itertools as it
-import copy
 
 #----------------------------------------------------------------------------------------------------------------------------------------
 #FUNCTIONS
@@ -273,6 +272,7 @@ jobs = [["single", "PstI", "PstI Adaptor 1", "PstI Primer 1"],
 ##Script
 
 job_dictionary = job_queue(jobs, enzyme_data, adaptor_data, primer_data)
+print(job_dictionary)
 
 #print(job_dictionary)
 
