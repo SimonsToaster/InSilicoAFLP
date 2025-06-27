@@ -177,6 +177,8 @@ def job_queue(jobs, enzyme_data, adaptor_data, primer_data):
         complete_selective_bases_dict = {}
         for primer_entry in primer_list:
             complete_selective_bases_dict.update(primer_entry[4])
+        print("Complete selective bases dict")
+        print(complete_selective_bases_dict)
         if method == "single":
             for entry in complete_selective_bases_dict:
                 job = {}
@@ -190,11 +192,16 @@ def job_queue(jobs, enzyme_data, adaptor_data, primer_data):
         else:
             #All combinations need to be made first.
             all_primers = list(complete_selective_bases_dict.keys())
+            print("All primers")
+            print(all_primers)
             all_primer_pairs = list(it.combinations(all_primers, 2))
+            print("All primer pairs")
+            print(all_primer_pairs)
             filtered_combinations = []
             for entry in all_primer_pairs:
                 if entry[0][0] != entry[1][0]:
                     filtered_combinations.append(entry)
+            print("filtered combinations")
             #Now create jobs for every combination
             for entry in filtered_combinations:
                 job = {}
@@ -290,13 +297,13 @@ for job_entry in job_dictionary:
     fragment_library = sequence
     for enzyme in enzyme_list:
         fragment_library = digest(fragment_library, enzyme)
-    print(f"Number of restrcition fragments{len(fragment_library)}")
+    #print(f"Number of restrcition fragments{len(fragment_library)}")
     match_list = job_data[2][3]
     filtered_fragments = []
     for match_pair in match_list:
         print(match_pair)
         filtered = selection(fragment_library, match_pair)
         filtered_fragments.append(filtered)
-    print(f"Number of filtered fragments: {len(filtered_fragments)}")
+    #print(f"Number of filtered fragments: {len(filtered_fragments)}")
     #attach extension to fragments
 

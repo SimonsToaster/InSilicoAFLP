@@ -121,30 +121,30 @@ def job_queue(job_definition, enzyme_data, adaptor_data, primer_data):
     for temp_job_entry in temp_jobs:
         if temp_job_entry[0] == "single":
             method = temp_job_entry[0]
-            print("Method of Job", method)
+            #print("Method of Job", method)
             enzyme = temp_job_entry[1][0]
-            print("Enzyme of Job", enzyme)
+            #print("Enzyme of Job", enzyme)
             name_adaptor = temp_job_entry[2][0]
-            print("adaptor of Job", name_adaptor)
+            #print("adaptor of Job", name_adaptor)
             name_primer = temp_job_entry[3][0][0]
-            print("Primer of job", name_primer)
+            #print("Primer of job", name_primer)
             for selective_base in temp_job_entry[3][0][2]:
                 RE_index = enzyme_data[enzyme_data["Enzyme name"] == enzyme].index[0]
-                print("RE index", RE_index)
+                #print("RE index", RE_index)
                 recognition_sequence = enzyme_data.at[RE_index, "Recognition sequence"]
-                print("RE_seqeunce", recognition_sequence)
+                #print("RE_seqeunce", recognition_sequence)
                 cut_index = enzyme_data.at[RE_index, "Cut Index"]
-                print("cut index", cut_index)
+                #print("cut index", cut_index)
                 five_rec_seq = five_prime_end(recognition_sequence, cut_index, selective_base)
-                print("Five rec seq", five_rec_seq)
+                #print("Five rec seq", five_rec_seq)
                 three_rec_seq = three_prime_end(recognition_sequence, cut_index, selective_base)
-                print("Three rec seq", three_rec_seq)
+                #print("Three rec seq", three_rec_seq)
                 primer_index = primer_data[primer_data["Primer name"] == name_primer].index[0]
                 primer_sequence = primer_data.at[primer_index, "Primer core sequence"]
                 five_extention_seq = five_primer_extention(primer_sequence, cut_index)
-                print("Five extention seq", five_extention_seq)
+                #print("Five extention seq", five_extention_seq)
                 three_extention_seq = three_primer_extention(primer_sequence, cut_index)
-                print(three_extention_seq)
+                #print(three_extention_seq)
                 new_job = pd.DataFrame(
                                     {"Job Number"                  : ["none"],
                                     "Method"                       : [method],
@@ -166,14 +166,207 @@ def job_queue(job_definition, enzyme_data, adaptor_data, primer_data):
                                     "P2: 5' Extention Sequence"    : ["none"],
                                     "P2: 3' Extention Sequence"    : ["none"]}
                                 )
-                print(new_job)
+                #print(new_job)
                 jobs = pd.concat([jobs, new_job], ignore_index=True)
         elif temp_job_entry[0] == "double":
-            print("double")
+            #print(temp_job_entry)
+            method = temp_job_entry[0]
+            #print("Method of Job", method)
+            enzyme_list = temp_job_entry[1]
+            print("Enzymes of Job", enzyme)
+            name_adaptor = temp_job_entry[2]
+            #print("Adaptors of Job", name_adaptor)
+            name_primer = [temp_job_entry[3][0][0], temp_job_entry[3][1][0]]
+            #print("Primers of job", name_primer)
+            #Create combinations of selective bases
+            all_primers = []
+            for primer in temp_job_entry[3]:
+                enzyme = primer[0]
+                for selective_base in primer[2]:
+                    comb = (enzyme, selective_base)
+                    all_primers.append(comb)
+            #print("All primers")
+            #print(all_primers)
+            all_primer_pairs = list(it.combinations(all_primers, 2))
+            #print("all_primer_pairs")
+            #print(all_primer_pairs)
+            filtered_combinations = []
+            for entry in all_primer_pairs:
+                if entry[0][0] != entry[1][0]:
+                    filtered_combinations.append(entry)
+            #print("filtered combinations")
+            #print(filtered_combinations)
+            for combination in filtered_combinations:
+                coll_data = []
+                for primer in combination:
+                    #print(f"Primer: {primer}")
+                    primer_name = primer[0]
+                    selective_base = primer[1]
+                    primer_index = primer_data[primer_data["Primer name"] == primer_name].index[0]
+                    primer_enzyme = primer_data.at[primer_index, "Enzyme name"]
+                    #print(f"primer enzyme: {primer_enzyme}")
+                    RE_index = enzyme_data[enzyme_data["Enzyme name"] == primer_enzyme].index[0]
+                    recognition_sequence = enzyme_data.at[RE_index, "Recognition sequence"]
+                    cut_index = enzyme_data.at[RE_index, "Cut Index"]
+                    five_rec_seq = five_prime_end(recognition_sequence, cut_index, selective_base)
+                    three_rec_seq = three_prime_end(recognition_sequence, cut_index, selective_base)
+                    primer_sequence = primer_data.at[primer_index, "Primer core sequence"]
+                    five_extention_seq = five_primer_extention(primer_sequence, cut_index)
+                    three_extention_seq = three_primer_extention(primer_sequence, cut_index)
+                    new_entry = [primer_name, selective_base, five_rec_seq, three_rec_seq, five_extention_seq, three_extention_seq]
+                    coll_data.append(new_entry)
+                #print("Collected data")
+                #print(coll_data)
+                new_job = pd.DataFrame(
+                                    {"Job Number"                  : ["none"],
+                                    "Method"                       : [method],
+                                    "Name Enzyme 1"                : [enzyme_list[0]],
+                                    "Name Enzyme 2"                : [enzyme_list[1]],
+                                    "Name Enzyme 3"                : ["none"],
+                                    "Name Adaptor 1"               : [name_adaptor[0]],
+                                    "Name Adaptor 2"               : [name_adaptor[1]],
+                                    "Name Primer 1"                : [coll_data[0][0]],
+                                    "P1: Selective Bases"          : [coll_data[0][1]],
+                                    "P1: 5' Recognition Sequences" : [coll_data[0][2]],
+                                    "P1: 3' Recognition Sequences" : [coll_data[0][3]],
+                                    "P1: 5' Extention Sequence"    : [coll_data[0][4]],
+                                    "P1: 3' Extention Sequence"    : [coll_data[0][5]],
+                                    "Name Primer 2"                : [coll_data[1][0]],
+                                    "P2: Selective Bases"          : [coll_data[1][1]],
+                                    "P2: 5' Recognition Sequences" : [coll_data[1][2]],
+                                    "P2: 3' Recognition Sequences" : [coll_data[1][3]],
+                                    "P2: 5' Extention Sequence"    : [coll_data[1][4]],
+                                    "P2: 3' Extention Sequence"    : [coll_data[1][5]]}
+                                )
+                #print(new_job)
+                jobs = pd.concat([jobs, new_job], ignore_index=True)
         elif temp_job_entry[0] == "triple":
-            print("triple")
-        
-    return(jobs)  
+            #print(temp_job_entry)
+            method = temp_job_entry[0]
+            #print("Method of Job", method)
+            enzyme_list = temp_job_entry[1]
+            #print("Enzymes of Job", enzyme)
+            name_adaptor = temp_job_entry[2]
+            #print("Adaptors of Job", name_adaptor)
+            name_primer = [temp_job_entry[3][0][0], temp_job_entry[3][1][0]]
+            #print("Primers of job", name_primer)
+            #Create combinations of selective bases
+            all_primers = []
+            for primer in temp_job_entry[3]:
+                enzyme = primer[0]
+                for selective_base in primer[2]:
+                    comb = (enzyme, selective_base)
+                    all_primers.append(comb)
+            #print("All primers")
+            #print(all_primers)
+            all_primer_pairs = list(it.combinations(all_primers, 2))
+            #print("all_primer_pairs")
+            #print(all_primer_pairs)
+            filtered_combinations = []
+            for entry in all_primer_pairs:
+                if entry[0][0] != entry[1][0]:
+                    filtered_combinations.append(entry)
+            #print("filtered combinations")
+            #print(filtered_combinations)
+            for combination in filtered_combinations:
+                coll_data = []
+                for primer in combination:
+                    #print(f"Primer: {primer}")
+                    primer_name = primer[0]
+                    selective_base = primer[1]
+                    primer_index = primer_data[primer_data["Primer name"] == primer_name].index[0]
+                    primer_enzyme = primer_data.at[primer_index, "Enzyme name"]
+                    #print(f"primer enzyme: {primer_enzyme}")
+                    RE_index = enzyme_data[enzyme_data["Enzyme name"] == primer_enzyme].index[0]
+                    recognition_sequence = enzyme_data.at[RE_index, "Recognition sequence"]
+                    cut_index = enzyme_data.at[RE_index, "Cut Index"]
+                    five_rec_seq = five_prime_end(recognition_sequence, cut_index, selective_base)
+                    three_rec_seq = three_prime_end(recognition_sequence, cut_index, selective_base)
+                    primer_sequence = primer_data.at[primer_index, "Primer core sequence"]
+                    five_extention_seq = five_primer_extention(primer_sequence, cut_index)
+                    three_extention_seq = three_primer_extention(primer_sequence, cut_index)
+                    new_entry = [primer_name, selective_base, five_rec_seq, three_rec_seq, five_extention_seq, three_extention_seq]
+                    coll_data.append(new_entry)
+                #print("Collected data")
+                #print(coll_data)
+                new_job = pd.DataFrame(
+                                    {"Job Number"                  : ["none"],
+                                    "Method"                       : [method],
+                                    "Name Enzyme 1"                : [enzyme_list[0]],
+                                    "Name Enzyme 2"                : [enzyme_list[1]],
+                                    "Name Enzyme 3"                : [enzyme_list[2]],
+                                    "Name Adaptor 1"               : [name_adaptor[0]],
+                                    "Name Adaptor 2"               : [name_adaptor[1]],
+                                    "Name Primer 1"                : [coll_data[0][0]],
+                                    "P1: Selective Bases"          : [coll_data[0][1]],
+                                    "P1: 5' Recognition Sequences" : [coll_data[0][2]],
+                                    "P1: 3' Recognition Sequences" : [coll_data[0][3]],
+                                    "P1: 5' Extention Sequence"    : [coll_data[0][4]],
+                                    "P1: 3' Extention Sequence"    : [coll_data[0][5]],
+                                    "Name Primer 2"                : [coll_data[1][0]],
+                                    "P2: Selective Bases"          : [coll_data[1][1]],
+                                    "P2: 5' Recognition Sequences" : [coll_data[1][2]],
+                                    "P2: 3' Recognition Sequences" : [coll_data[1][3]],
+                                    "P2: 5' Extention Sequence"    : [coll_data[1][4]],
+                                    "P2: 3' Extention Sequence"    : [coll_data[1][5]]}
+                                )
+                #print(new_job)
+                jobs = pd.concat([jobs, new_job], ignore_index=True)
+
+        jobs["Job Number"] = jobs.apply(lambda row: f"Job {row.name + 1}", axis = 1)
+    return(jobs)
+
+def sequence_fasta(filename):
+    #This function extracts a nuclotide sequence from a fasta file.
+    #It checks and creates errors when the provided file path is wrong, the file is not a fasta file, does not contain a DNA sequence, 
+    #is empty or contains multiple sequences.
+
+    if not os.path.isfile(filename):
+        sys.exit(f"Error: {filename} does not exist")
+
+    with open(filename, "r") as file:
+        first_line = file.readline()
+        if not first_line.startswith(">"):
+            sys.exit(f"Error: {filename} is not a fasta file")
+    
+    sequence = ""
+
+    with open(filename, "r") as file:
+        next(file)
+        for line in file:
+            line = line.strip()
+            line = line.upper()
+            if line.startswith(">"):
+                sys.exit(f"Error: {filename} contains multiple sequences.")
+            elif not re.fullmatch("[ATGCN]*", line):
+                sys.exit(f"Error: {filename} does not contain a nuclotide sequence.")
+            sequence += line
+
+    if len(sequence) == 0:
+        sys.exit(f"Error: {filename} is empty")
+    
+    return sequence
+
+def cut_sites(seqeunce, enzyme, enzyme_data):
+    #This function gets a sequence, an enzyme and an enzyme dataframe and returns a dataframe of 
+    #all the cut indices and the Enzyme
+
+    enzyme_index = enzyme_data[enzyme_data["Enzyme name"] == enzyme].index[0]
+    recognition_sequence = enzyme_data.at[enzyme_index, "Recognition sequence"]
+    cut_index = enzyme_data.at[enzyme_index, "Cut Index"]
+
+    cut_sites = []
+
+    match_sequence = re.compile(recognition_sequence)
+
+    for match in match_sequence.finditer(seqeunce):
+        cut_pos = match.start() +cut_index
+        cut_sites.append({"Wnzyme name": enzyme, "Cut index": cut_pos})
+
+    enzyme_cut_sites = pd.DataFrame(cut_sites)
+
+    return enzyme_cut_sites
+
 
 #----------------------------------------------------------------------------------------------------------------------------------------
 #SCRIPT
@@ -238,4 +431,24 @@ print(jobs)
 """
 jobs = job_queue(job_definition, enzyme_data, adaptor_data, primer_data)
 
-print(jobs.iloc[:, :14])
+#print(jobs)
+
+#Get path to the genome
+path_genome = "Support\\ECPlambda.fasta"
+
+absolute_path = os.path.dirname(__file__)
+relative_path_genome = path_genome
+full_path_genome = os.path.join(absolute_path, relative_path_genome)
+
+sequence = [sequence_fasta(full_path_genome)]
+
+
+#create the fingerprints
+for index, job_entry in jobs.iterrows():
+    #Create a dataframe with all cut sites in the sequence.
+    #Gather the enzymes.
+    enzyme_name_list = [job_entry["Name Enzyme 1"], job_entry["Name Enzyme 2"], job_entry["Name Enzyme 3"]]
+    print(enzyme_name_list)
+    for enzyme_entry in enzyme_name_list:
+        if enzyme_entry == "none":
+            continue
