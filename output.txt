@@ -1,0 +1,3282 @@
+[['single', ['PstI'], ['PstI Adaptor 1'], [['PstI Primer 1', 'R', ['A', 'G']]]], ['double', ['PstI', 'EcoRI'], ['PstI Adaptor 1', 'EcoRI Adaptor 1'], [['PstI Primer 1', 'R', ['A', 'G']], ['EcoRI Primer 1', 'Y', ['C', 'T']]]], ['triple', ['PstI', 'EcoRI', 'MseI'], ['PstI Adaptor 1', 'EcoRI Adaptor 1'], [['PstI Primer 1', 'R', ['A', 'G']], ['EcoRI Primer 1', 'Y', ['C', 'T']]]]]
+Enzymes of Job PstI
+['PstI', 'none', 'none']
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+['PstI', 'none', 'none']
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+['PstI', 'EcoRI', 'none']
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+['PstI', 'EcoRI', 'none']
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+['PstI', 'EcoRI', 'none']
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+['PstI', 'EcoRI', 'none']
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+test
+test
+none <class 'str'>
+['PstI', 'EcoRI', 'MseI']
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+['PstI', 'EcoRI', 'MseI']
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+['PstI', 'EcoRI', 'MseI']
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+['PstI', 'EcoRI', 'MseI']
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>
+test
+test
+MseI <class 'str'>

@@ -8,6 +8,9 @@ import re
 import itertools as it
 import numpy as np
 import pandas as pd
+from pathlib import Path
+from datetime import datetime
+import math as m
 
 #----------------------------------------------------------------------------------------------------------------------------------------
 #FUNCTIONS
@@ -140,6 +143,7 @@ def job_queue(job_definition, enzyme_data, adaptor_data, primer_data):
                 three_rec_seq = three_prime_end(recognition_sequence, cut_index, selective_base)
                 #print("Three rec seq", three_rec_seq)
                 primer_index = primer_data[primer_data["Primer name"] == name_primer].index[0]
+                primer_enzyme = primer_data.at[primer_index, "Enzyme name"]
                 primer_sequence = primer_data.at[primer_index, "Primer core sequence"]
                 five_extention_seq = five_primer_extention(primer_sequence, cut_index)
                 #print("Five extention seq", five_extention_seq)
@@ -154,17 +158,20 @@ def job_queue(job_definition, enzyme_data, adaptor_data, primer_data):
                                     "Name Adaptor 1"               : [name_adaptor],
                                     "Name Adaptor 2"               : ["none"],
                                     "Name Primer 1"                : [name_primer],
+                                    "P1: Enzyme"                   : [primer_enzyme],
                                     "P1: Selective Bases"          : [selective_base],
                                     "P1: 5' Recognition Sequences" : [five_rec_seq],
                                     "P1: 3' Recognition Sequences" : [three_rec_seq],
                                     "P1: 5' Extention Sequence"    : [five_extention_seq],
                                     "P1: 3' Extention Sequence"    : [three_extention_seq],
                                     "Name Primer 2"                : ["none"],
+                                    "P2: Enzyme"                   : [primer_enzyme],
                                     "P2: Selective Bases"          : ["none"],
                                     "P2: 5' Recognition Sequences" : ["none"],
                                     "P2: 3' Recognition Sequences" : ["none"],
                                     "P2: 5' Extention Sequence"    : ["none"],
-                                    "P2: 3' Extention Sequence"    : ["none"]}
+                                    "P2: 3' Extention Sequence"    : ["none"],
+                                    "Number of Overlaps"           : [0]}
                                 )
                 #print(new_job)
                 jobs = pd.concat([jobs, new_job], ignore_index=True)
@@ -211,9 +218,10 @@ def job_queue(job_definition, enzyme_data, adaptor_data, primer_data):
                     five_rec_seq = five_prime_end(recognition_sequence, cut_index, selective_base)
                     three_rec_seq = three_prime_end(recognition_sequence, cut_index, selective_base)
                     primer_sequence = primer_data.at[primer_index, "Primer core sequence"]
+                    primer_enzyme = primer_data.at[primer_index, "Enzyme name"]
                     five_extention_seq = five_primer_extention(primer_sequence, cut_index)
                     three_extention_seq = three_primer_extention(primer_sequence, cut_index)
-                    new_entry = [primer_name, selective_base, five_rec_seq, three_rec_seq, five_extention_seq, three_extention_seq]
+                    new_entry = [primer_name, selective_base, five_rec_seq, three_rec_seq, five_extention_seq, three_extention_seq, primer_enzyme]
                     coll_data.append(new_entry)
                 #print("Collected data")
                 #print(coll_data)
@@ -226,17 +234,20 @@ def job_queue(job_definition, enzyme_data, adaptor_data, primer_data):
                                     "Name Adaptor 1"               : [name_adaptor[0]],
                                     "Name Adaptor 2"               : [name_adaptor[1]],
                                     "Name Primer 1"                : [coll_data[0][0]],
+                                    "P1: Enzyme"                   : [coll_data[0][6]],
                                     "P1: Selective Bases"          : [coll_data[0][1]],
                                     "P1: 5' Recognition Sequences" : [coll_data[0][2]],
                                     "P1: 3' Recognition Sequences" : [coll_data[0][3]],
                                     "P1: 5' Extention Sequence"    : [coll_data[0][4]],
                                     "P1: 3' Extention Sequence"    : [coll_data[0][5]],
                                     "Name Primer 2"                : [coll_data[1][0]],
+                                    "P2: Enzyme"                   : [coll_data[1][6]],
                                     "P2: Selective Bases"          : [coll_data[1][1]],
                                     "P2: 5' Recognition Sequences" : [coll_data[1][2]],
                                     "P2: 3' Recognition Sequences" : [coll_data[1][3]],
                                     "P2: 5' Extention Sequence"    : [coll_data[1][4]],
-                                    "P2: 3' Extention Sequence"    : [coll_data[1][5]]}
+                                    "P2: 3' Extention Sequence"    : [coll_data[1][5]],
+                                    "Number of Overlaps"           : [0]}
                                 )
                 #print(new_job)
                 jobs = pd.concat([jobs, new_job], ignore_index=True)
@@ -283,9 +294,10 @@ def job_queue(job_definition, enzyme_data, adaptor_data, primer_data):
                     five_rec_seq = five_prime_end(recognition_sequence, cut_index, selective_base)
                     three_rec_seq = three_prime_end(recognition_sequence, cut_index, selective_base)
                     primer_sequence = primer_data.at[primer_index, "Primer core sequence"]
+                    primer_enzyme = primer_data.at[primer_index, "Enzyme name"]
                     five_extention_seq = five_primer_extention(primer_sequence, cut_index)
                     three_extention_seq = three_primer_extention(primer_sequence, cut_index)
-                    new_entry = [primer_name, selective_base, five_rec_seq, three_rec_seq, five_extention_seq, three_extention_seq]
+                    new_entry = [primer_name, selective_base, five_rec_seq, three_rec_seq, five_extention_seq, three_extention_seq, primer_enzyme]
                     coll_data.append(new_entry)
                 #print("Collected data")
                 #print(coll_data)
@@ -298,17 +310,20 @@ def job_queue(job_definition, enzyme_data, adaptor_data, primer_data):
                                     "Name Adaptor 1"               : [name_adaptor[0]],
                                     "Name Adaptor 2"               : [name_adaptor[1]],
                                     "Name Primer 1"                : [coll_data[0][0]],
+                                    "P1: Enzyme"                   : [coll_data[0][6]],
                                     "P1: Selective Bases"          : [coll_data[0][1]],
                                     "P1: 5' Recognition Sequences" : [coll_data[0][2]],
                                     "P1: 3' Recognition Sequences" : [coll_data[0][3]],
                                     "P1: 5' Extention Sequence"    : [coll_data[0][4]],
                                     "P1: 3' Extention Sequence"    : [coll_data[0][5]],
                                     "Name Primer 2"                : [coll_data[1][0]],
+                                    "P1: Enzyme"                   : [coll_data[1][6]],
                                     "P2: Selective Bases"          : [coll_data[1][1]],
                                     "P2: 5' Recognition Sequences" : [coll_data[1][2]],
                                     "P2: 3' Recognition Sequences" : [coll_data[1][3]],
                                     "P2: 5' Extention Sequence"    : [coll_data[1][4]],
-                                    "P2: 3' Extention Sequence"    : [coll_data[1][5]]}
+                                    "P2: 3' Extention Sequence"    : [coll_data[1][5]],
+                                    "Number of Overlaps"           : [0]}
                                 )
                 #print(new_job)
                 jobs = pd.concat([jobs, new_job], ignore_index=True)
@@ -360,8 +375,8 @@ def cut_sites(seqeunce, enzyme, enzyme_data):
     match_sequence = re.compile(recognition_sequence)
 
     for match in match_sequence.finditer(seqeunce):
-        cut_pos = match.start() +cut_index
-        cut_sites.append({"Wnzyme name": enzyme, "Cut index": cut_pos})
+        cut_pos = match.start() + cut_index
+        cut_sites.append({"Enzyme name": enzyme, "Cut position": cut_pos})
 
     enzyme_cut_sites = pd.DataFrame(cut_sites)
 
@@ -409,10 +424,14 @@ job_definition = pd.DataFrame(
      "Primers"                      : ["PstI Primer 1", "PstI Primer 1+EcoRI Primer 1", "PstI Primer 1+EcoRI Primer 1"]}
 )
 
+resolution = 0.1
+upper_limit_electrophoresis = 11000
+lower_limit_electrophoresis = 80
+
+DNA_ladder = [10000, 8000, 6000, 5000, 4000, 3500, 3000, 2500, 2000, 1500, 1200, 1000, 900, 800, 600, 500, 400, 300, 200, 100]
 
 ##Data
 path_genome = "Support\\ECPlambda.fasta"
-
 
 ##Script
 
@@ -429,9 +448,12 @@ print(job_definition)
 print("The jobs data frame")
 print(jobs)
 """
-jobs = job_queue(job_definition, enzyme_data, adaptor_data, primer_data)
 
-#print(jobs)
+#sys.stdout = open('output.txt', 'w')
+
+jobs = job_queue(job_definition, enzyme_data, adaptor_data, primer_data)
+#with pd.option_context('display.max_rows', None, 'display.max_columns', None, 'display.width', None):
+#    print(jobs)
 
 #Get path to the genome
 path_genome = "Support\\ECPlambda.fasta"
@@ -440,7 +462,13 @@ absolute_path = os.path.dirname(__file__)
 relative_path_genome = path_genome
 full_path_genome = os.path.join(absolute_path, relative_path_genome)
 
-sequence = [sequence_fasta(full_path_genome)]
+sequence = sequence_fasta(full_path_genome)
+
+#Create folder for reports
+timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+parent_folder = Path(f"Report_{timestamp}")
+plots_folder = parent_folder / "plots"
+plots_folder.mkdir(parents = True, exist_ok = True)
 
 
 #create the fingerprints
@@ -448,7 +476,109 @@ for index, job_entry in jobs.iterrows():
     #Create a dataframe with all cut sites in the sequence.
     #Gather the enzymes.
     enzyme_name_list = [job_entry["Name Enzyme 1"], job_entry["Name Enzyme 2"], job_entry["Name Enzyme 3"]]
-    print(enzyme_name_list)
+    #print(enzyme_name_list)
+    cut_sites_job = pd.DataFrame(
+            {"Enzyme name"      :[],
+             "Cut position"        :[]}
+        )
+    #Create dattaframe of cut sites
     for enzyme_entry in enzyme_name_list:
         if enzyme_entry == "none":
             continue
+        else:
+            new_cut_sites = cut_sites(sequence, enzyme_entry, enzyme_data)
+            #print(new_cut_sites)
+            cut_sites_job = pd.concat([cut_sites_job, new_cut_sites], ignore_index=True)
+    cut_sites_job = cut_sites_job.sort_values("Cut position", ascending=True).reset_index(drop=True)
+    #print(cut_sites_job)
+    #Now create fragments dataframe.
+    fragments = pd.DataFrame(
+        {"Start position"       :[],
+         "End position"         :[],
+         "Start enzyme"         :[],
+         "End enzyme"           :[],
+         "5' Adaptor sequence"  :[],
+         "3' Adaptor sequence"  :[],
+         "Fragment sequence"    :[],
+         "Length (wA)"          :[],
+         "Upper length"         :[],
+         "Lower length"         :[],
+         "Overlap"              :[]}
+    )
+    for i in range(len(cut_sites_job)-1):
+        #Get fragment sequence
+        start_position = int(cut_sites_job.at[i, "Cut position"])
+        end_position = int(cut_sites_job.at[i+1, "Cut position"])
+        #print(f"Start position: {start_position}, End position: {end_position}")
+        fragment_sequence = sequence[start_position:end_position]
+        #Check if fragment will be amplified
+        start_enzyme = cut_sites_job.at[i, "Enzyme name"]
+        end_enzyme = cut_sites_job.at[i+1, "Enzyme name"]
+        #Skip fragments which start or end with Enyzme 3 digestion
+        enzyme_3 = jobs.at[index, "Name Enzyme 3"]
+        if start_enzyme == enzyme_3 or end_enzyme == enzyme_3:
+            continue
+        else:
+            #Get the start and stop sequences
+            enzyme_1 = jobs.at[index, "P1: Enzyme"]
+            enzyme_2 = jobs.at[index, "P2: Enzyme"]
+            print("Enzyme 1 and Enzyme 2:")
+            print(enzyme_1, type(enzyme_1), enzyme_2, type(enzyme_2))
+            if start_enzyme == enzyme_1:
+                start_match = jobs.at[index, "P1: 5' Recognition Sequences"]
+            elif start_enzyme == enzyme_2:
+                start_match = jobs.at[index, "P2: 5' Recognition Sequences"]
+            if end_enzyme == enzyme_1:
+                end_match = jobs.at[index, "P1: 3' Recognition Sequences"]
+            elif start_enzyme == enzyme_2:
+                end_match = jobs.at[index, "P2: 3' Recognition Sequences"]
+            if fragment_sequence.startswith(start_match) and fragment_sequence.endswith(end_match):
+                #Find extentions
+                if start_enzyme == enzyme_1:
+                    start_extension = jobs.at[index, "P1: 5' Extention Sequence"]
+                elif start_enzyme == enzyme_2:
+                    start_extension = jobs.at[index, "P2: 5' Extention Sequence"]
+                if end_enzyme == enzyme_1:
+                    end_extension = jobs.at[index, "P1: 3' Extention Sequence"]
+                elif start_enzyme == enzyme_2:
+                    end_extension = jobs.at[index, "P2: 3' Extention Sequence"]
+                #Calculate length of fragment
+                fragment_length = len(start_extension) + len(fragment_sequence) + len(end_extension)
+                upper_length = fragment_length + resolution * fragment_length
+                lower_length = fragment_length - resolution * fragment_length
+                new_fragment = pd.DataFrame(
+                    {"Start position"      :[start_position],
+                    "End position"         :[end_position],
+                    "Start enzyme"         :[start_enzyme],
+                    "End enzyme"           :[end_enzyme],
+                    "5' Adaptor sequence"  :[start_extension],
+                    "3' Adaptor sequence"  :[end_extension],
+                    "Fragment sequence"    :[fragment_sequence],
+                    "Length (wA)"          :[fragment_length],
+                    "Upper length"         :[upper_length],
+                    "Lower length"         :[lower_length],
+                    "Overlap"              :[0]}
+                    )
+                print(new_fragment)
+                fragments = pd.concat([fragments, new_fragment], ignore_index=True)
+    #Remove too large and too small fragments:
+    fragments = fragments[fragments["Length (wA)"].between(lower_limit_electrophoresis, upper_limit_electrophoresis)]
+    #look and mark the overlaps
+    for i in range(len(fragments)-1):
+        i_upper_length = fragments.at[i, "Upper length"]
+        i1_lower_length = fragments.at[i, "Lower length"]
+        if i_upper_length >= i1_lower_length:
+            fragments.at[i, "Overlap"] = 1
+            fragments.at[i+1, "Overlap"] = 1
+    #Enter number of overlaps into job dataframe
+    no_overlaps = fragments["Overlap"].sum()
+    jobs.at[i, "Number of Overlaps"] = no_overlaps
+
+    #Create graphic
+
+
+
+
+
+    
+
