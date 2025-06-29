@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>In Silico AFLP Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #999; padding: 8px; text-align: left; }
+        .section { margin-top: 40px; }
+        img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <h1>In Silico AFLP Report</h1>
+
+    {% for run in runs %}
+    <div class="section">
+        <h2>Run {{ loop.index }} - {{ run.description }}</h2>
+
+        <h3>Digest Parameters</h3>
+        <ul>
+            <li><strong>Enzymes:</strong> {{ run.enzymes | join(', ') }}</li>
+            <li><strong>Adaptors:</strong>
+                <ul>
+                    {% for adaptor in run.adaptors %}
+                        <li>{{ adaptor.name }} (Upper: {{ adaptor.upper }}, Lower: {{ adaptor.lower }})</li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li><strong>Primers:</strong>
+                <ul>
+                    {% for primer in run.primers %}
+                        <li>{{ primer.name }} (Core: {{ primer.core }}, Selective: {{ primer.selective }})</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Fragment Summary</h3>
+        <ul>
+            <li>Total Fragments: {{ run.total_fragments }}</li>
+            <li>Overlapping Fragments: {{ run.overlapping_fragments }}</li>
+            <li>Resolution: {{ run.resolution }}</li>
+            <li>Length Cutoff: {{ run.length_cutoff_lower }} – {{ run.length_cutoff_upper }}</li>
+        </ul>
+
+        <h3>Electrophoresis Image</h3>
+        <img src="{{ run.graph_path }}" alt="Gel image for Run {{ loop.index }}">
+
+        <h3>Fragments</h3>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Length</th>
+                <th>5′ Extension</th>
+                <th>Sequence</th>
+                <th>3′ Extension</th>
+            </tr>
+            {% for frag in run.fragments %}
+            <tr>
+                <td>{{ frag.number }}</td>
+                <td>{{ frag.length }}</td>
+                <td>{{ frag.ext5 }}</td>
+                <td>{{ frag.sequence }}</td>
+                <td>{{ frag.ext3 }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endfor %}
+</body>
+</html>
