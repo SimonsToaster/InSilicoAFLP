@@ -118,17 +118,20 @@ def job_queue(job_definition, enzyme_data, adaptor_data, primer_data):
      "Name Adaptor 1"               : [],
      "Name Adaptor 2"               : [],
      "Name Primer 1"                : [],
-     "P1: Selective Bases"           : [],
+     "P1: Enzyme"                   : [],
+     "P1: Selective Bases"          : [],
      "P1: 5' Recognition Sequences" : [],
      "P1: 3' Recognition Sequences" : [],
      "P1: 5' Extention Sequence"    : [],
      "P1: 3' Extention Sequence"    : [],
      "Name Primer 2"                : [],
+     "P1: Enzyme"                   : [],
      "P2: Selective Bases"          : [],
      "P2: 5' Recognition Sequences" : [],
      "P2: 3' Recognition Sequences" : [],
      "P2: 5' Extention Sequence"    : [],
-     "P2: 3' Extention Sequence"    : []}
+     "P2: 3' Extention Sequence"    : [],
+     "Number of Overlaps"           : []}
     )
 
     #Fill job dataframe
@@ -487,19 +490,20 @@ adaptor_data = pd.DataFrame(
 ###Primer data
 
 primer_data = pd.DataFrame(
-    {"Primer name"                  : ["PstI Primer 1", "EcoRI Primer 1", "Mse1 Primer 1"],
-     "Enzyme name"                  : ["PstI", "EcoRI", "MseI"],
-     "Primer core sequence"         : ["GACTGCGTACATGCAG", "GACTGCGTACCAATTC", "GATGAGTCCTGAGTAA"],
-     "Selective bases"              : ["ATR", "ATY", "ATG"]}
+    {"Primer name"                  : ["PstI Primer 1", "EcoRI Primer 1", "Mse1 Primer 1", "PstI Primer 2"],
+     "Enzyme name"                  : ["PstI", "EcoRI", "MseI", "PstI"],
+     "Primer core sequence"         : ["GACTGCGTACATGCAG", "GACTGCGTACCAATTC", "GATGAGTCCTGAGTAA", "GACTGCGTACATGCAG"],
+     "Selective bases"              : ["ATT", "ATG", "ATG", "AGN"]}
 )
 
 ###Jobs
 job_definition = pd.DataFrame(
-    {"Method"                       : ["single", "double",],
-     "Digestion Enzymes"            : ["PstI", "PstI+EcoRI"],
-     "Adaptors"                     : ["PstI Adaptor 1", "PstI Adaptor 1+EcoRI Adaptor 1"],
-     "Primers"                      : ["PstI Primer 1", "PstI Primer 1+EcoRI Primer 1"]}
+    {"Method"                       : ["single", "double", "triple"],
+     "Digestion Enzymes"            : ["PstI","PstI+EcoRI", "PstI+EcoRI+MseI"],
+     "Adaptors"                     : ["PstI Adaptor 1", "PstI Adaptor 1+EcoRI Adaptor 1", "PstI Adaptor 1+EcoRI Adaptor 1"],
+     "Primers"                      : ["PstI Primer 1", "PstI Primer 1+EcoRI Primer 1", "PstI Primer 1+EcoRI Primer 1"]}
 )
+
 
 gel_height = 10
 resolution = 0.02
@@ -508,7 +512,7 @@ lower_limit_electrophoresis = 80
 
 DNA_ladder = [10000, 8000, 6000, 5000, 4000, 3500, 3000, 2500, 2000, 1500, 1200, 1000, 900, 800, 600, 500, 400, 300, 200, 100]
 
-##Data
+
 
 ##Script
 
@@ -545,7 +549,6 @@ print("Finished generating job queue")
 
 print("Start reading genome")
 path_genome = "Support\\GCA_000002985.3_WBcel235_genomic.fasta"
-
 absolute_path = os.path.dirname(__file__)
 relative_path_genome = path_genome
 full_path_genome = os.path.join(absolute_path, relative_path_genome)
