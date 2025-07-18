@@ -408,17 +408,7 @@ def cut_sites(seqeunce, enzyme, enzyme_data):
 
     return enzyme_cut_sites
 
-def log_distance(length, upper_limit, lower_limit, gel_height):
-    #Function takes a lenght, upper limit, lower limit and gel size to calculate a logarithmic scale of the fragment
-
-    log_min = m.log10(lower_limit)
-    log_max = m.log10(upper_limit)
-    norm_log = (m.log10(length) - log_min) / (log_max - log_min)
-    log_size = gel_height * (1 - norm_log)
-
-    return log_size
-
-def draw_gel(fragments, fragments_overlap, ladder, upper_limit, lower_limit, resolution, gel_height):
+def draw_gel(fragments, fragments_overlap, ladder, upper_limit, lower_limit, resolution):
     
     #Look that fragments and ladder are sorted in ascending order
 
@@ -493,7 +483,7 @@ primer_data = pd.DataFrame(
     {"Primer name"                  : ["PstI Primer 1", "EcoRI Primer 1", "Mse1 Primer 1", "PstI Primer 2"],
      "Enzyme name"                  : ["PstI", "EcoRI", "MseI", "PstI"],
      "Primer core sequence"         : ["GACTGCGTACATGCAG", "GACTGCGTACCAATTC", "GATGAGTCCTGAGTAA", "GACTGCGTACATGCAG"],
-     "Selective bases"              : ["ATT", "ATG", "ATG", "AGN"]}
+     "Selective bases"              : ["ATN", "ATG", "ATG", "AGN"]}
 )
 
 ###Jobs
@@ -682,7 +672,7 @@ for index, job_entry in jobs.iterrows():
     fragment_list = fragments["Length (wA)"].tolist()
     fragments_overlap = fragments[fragments["Overlap"] == 1]["Length (wA)"].tolist()
 
-    plot = draw_gel(fragment_list, fragments_overlap, DNA_ladder, upper_limit_electrophoresis, lower_limit_electrophoresis, resolution, gel_height)
+    plot = draw_gel(fragment_list, fragments_overlap, DNA_ladder, upper_limit_electrophoresis, lower_limit_electrophoresis, resolution)
     name_plot = jobs.at[index, "Job Number"] + "_plot" + ".png"
     plot_path = plots_folder / name_plot
 

@@ -37,15 +37,19 @@
             </li>
         </ul>
 
-        <h3>Fragment Summary</h3>
+        <h3>Electrophoresis</h3>
         <ul>
-            <li>Total Fragments: {{ run.total_fragments }}</li>
-            <li>Overlapping Fragments: {{ run.overlapping_fragments }}</li>
             <li>Resolution: {{ run.resolution }}</li>
             <li>Length Cutoff: {{ run.length_cutoff_lower }} – {{ run.length_cutoff_upper }}</li>
         </ul>
 
-        <h3>Electrophoresis Image</h3>
+        <h3>Fragment Summary</h3>
+        <ul>
+            <li>Total Fragments: {{ run.total_fragments }}</li>
+            <li>Overlapping Fragments: {{ run.overlapping_fragments }}</li>
+        </ul>
+
+        <h3>Gel Image</h3>
         <img src="{{ run.graph_path }}" alt="Gel image for Run {{ loop.index }}">
 
         <h3>Fragments</h3>
