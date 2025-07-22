@@ -1,0 +1,17 @@
+repos:
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  # Ruff version.
+  rev: v0.12.4
+  hooks:
+    # Run the linter.
+    - id: ruff-check
+      exclude: legacy/
+    # Run the formatter.
+    - id: ruff-format
+      exclude: legacy/
+
+- repo: https://github.com/pre-commit/mirrors-mypy
+  rev: v1.10.0  # Check https://github.com/pre-commit/mirrors-mypy for latest
+  hooks:
+    - id: mypy
+      exclude: legacy/

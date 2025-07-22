@@ -1,3 +1,10 @@
+# ----------------------------------------------------------------
+# DEPRECATED
+# This script is retained for reference only.
+# DEPRECATED
+# This script is retained for reference only.
+# ----------------------------------------------------------------
+
 #1. Variables
 
 recognition_site = "CTGCAG"

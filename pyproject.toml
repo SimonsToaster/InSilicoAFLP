@@ -1,0 +1,11 @@
+[tool.ruff]
+exclude = ["legacy"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+exclude = "legacy"
+disallow_untyped_defs = true
+warn_return_any = true
+check_untyped_defs = true
+strict_optional = true
