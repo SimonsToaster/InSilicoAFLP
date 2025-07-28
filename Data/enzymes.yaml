@@ -1,11 +1,11 @@
 #--------------------------------------------------------------
-# RESTRICTION ENZYMES
+# ENZYMES
 #--------------------------------------------------------------
 
 # This file contains information about restriction enzymes, 
 # their name and their recognition sequence. 
-# NAME: must be unique in the file.
-# RECOGNITION_SEQUENCE: the 5' to 3' recognition sequence in 
+# enzyme_name: must be unique in the file.
+# recognition_sequence: the 5' to 3' recognition sequence in 
 # upper case letters with the cut site indicated by a slash (/).
 # The cut site needs to be inside the recognition sequence, only
 # unambigious sequences (consisting of A, T, C, G) are allowed.
@@ -19,244 +19,246 @@
 # 4 BP RECOGNITION SEQUENCES
 #---------------------------------------------------------------
 
-- name: AluI
+- enzyme_name: AluI
   recognition_sequence: AG/CT
 
-- name: BfaI
+- enzyme_name: BfaI
   recognition_sequence: C/TAG
 
-- name: BstUI
+- enzyme_name: BstUI
   recognition_sequence: CG/CG
 
-- name: CviQI
+- enzyme_name: CviQI
   recognition_sequence: G/TAC
 
-- name: DpnI
+- enzyme_name: DpnI
   recognition_sequence: GA/TC
 
-- name: HaeIII
+- enzyme_name: HaeIII
   recognition_sequence: GG/CC
 
-- name: HhaI
+- enzyme_name: HhaI
   recognition_sequence: GCG/C
 
-- name: HinP1I
+- enzyme_name: HinP1I
   recognition_sequence: G/CGC
 
-- name: HpyCH4IV
+- enzyme_name: HpyCH4IV
   recognition_sequence: A/CGT
 
-- name: HpyCH4V
+- enzyme_name: HpyCH4V
   recognition_sequence: TG/CA
 
-- name: MseI
+- enzyme_name: MseI
   recognition_sequence: T/TAA
 
-- name: MspI
+- enzyme_name: MspI
   recognition_sequence: C/CGG
 
-- name: RsaI
+- enzyme_name: RsaI
   recognition_sequence: GT/AC
 
-- name: TaqI-v2
+- enzyme_name: TaqI-v2
   recognition_sequence: T/CGA
+
 
 
 #---------------------------------------------------------------
 # 6 BP RECOGNITION SEQUENCES
 #---------------------------------------------------------------
 
-- name: AatII
+
+- enzyme_name: AatII
   recognition_sequence: GACGT/C
 
-- name: Acc65I
+- enzyme_name: Acc65I
   recognition_sequence: G/GTACC
 
-- name: AclI
+- enzyme_name: AclI
   recognition_sequence: AA/CGTT
 
-- name: AfeI
+- enzyme_name: AfeI
   recognition_sequence: AGC/GCT
 
-- name: AflII
+- enzyme_name: AflII
   recognition_sequence: C/TTAAG
 
-- name: AgeI
+- enzyme_name: AgeI-HF®
   recognition_sequence: A/CCGGT
 
-- name: ApaI
+- enzyme_name: ApaI
   recognition_sequence: GGGCC/C
 
-- name: ApaLI
+- enzyme_name: ApaLI
   recognition_sequence: G/TGCAC
 
-- name: AseI
+- enzyme_name: AseI
   recognition_sequence: AT/TAAT
 
-- name: AvrII
+- enzyme_name: AvrII
   recognition_sequence: C/CTAGG
 
-- name: BamHI
+- enzyme_name: BamHI
   recognition_sequence: G/GATCC
 
-- name: BclI
+- enzyme_name: BclI
   recognition_sequence: T/GATCA
 
-- name: BglII
+- enzyme_name: BglII
   recognition_sequence: A/GATCT
 
-- name: BmtI
+- enzyme_name: BmtI-HF®
   recognition_sequence: GCTAG/C
 
-- name: BsiWI
+- enzyme_name: BsiWI-HF®
   recognition_sequence: C/GTACG
 
-- name: BspEI
+- enzyme_name: BspEI
   recognition_sequence: T/CCGGA
 
-- name: BspHI
+- enzyme_name: BspHI
   recognition_sequence: T/CATGA
 
-- name: BsrGI
+- enzyme_name: BsrGI-HF®
   recognition_sequence: T/GTACA
 
-- name: BssHII
+- enzyme_name: BssHII
   recognition_sequence: G/CGCGC
 
-- name: BstBI
+- enzyme_name: BstBI
   recognition_sequence: TT/CGAA
 
-- name: ClaI
+- enzyme_name: ClaI
   recognition_sequence: AT/CGAT
 
-- name: DraI
+- enzyme_name: DraI
   recognition_sequence: TTT/AAA
 
-- name: EagI
+- enzyme_name: EagI-HF®
   recognition_sequence: C/GGCCG
 
-- name: Eco53kI
+- enzyme_name: Eco53kI
   recognition_sequence: GAG/CTC
 
-- name: EcoRI
+- enzyme_name: EcoRI-HF®
   recognition_sequence: G/AATTC
 
-- name: EcoRV
+- enzyme_name: EcoRV
   recognition_sequence: GAT/ATC
 
-- name: FspI
+- enzyme_name: FspI
   recognition_sequence: TGC/GCA
 
-- name: HindIII
+- enzyme_name: HindIII
   recognition_sequence: A/AGCTT
 
-- name: HpaI
+- enzyme_name: HpaI
   recognition_sequence: GTT/AAC
 
-- name: KasI
+- enzyme_name: KasI
   recognition_sequence: G/GCGCC
 
-- name: KpnI
+- enzyme_name: KpnI-HF®
   recognition_sequence: GGTAC/C
 
-- name: MfeI
+- enzyme_name: MfeI-HF®
   recognition_sequence: C/AATTG
 
-- name: MluI
+- enzyme_name: MluI-HF®
   recognition_sequence: A/CGCGT
 
-- name: MscI
+- enzyme_name: MscI
   recognition_sequence: TGG/CCA
 
-- name: NaeI
+- enzyme_name: NaeI
   recognition_sequence: GCC/GGC
 
-- name: NarI
+- enzyme_name: NarI
   recognition_sequence: GG/CGCC
 
-- name: NcoI
+- enzyme_name: NcoI
   recognition_sequence: C/CATGG
 
-- name: NdeI
+- enzyme_name: NdeI
   recognition_sequence: CA/TATG
 
-- name: NgoMIV
+- enzyme_name: NgoMIV
   recognition_sequence: G/CCGGC
 
-- name: NheI
+- enzyme_name: NheI-HF®
   recognition_sequence: G/CTAGC
 
-- name: NruI
+- enzyme_name: NruI-HF®
   recognition_sequence: TCG/CGA
 
-- name: NsiI
+- enzyme_name: NsiI-HF®
   recognition_sequence: ATGCA/T
 
-- name: PciI
+- enzyme_name: PciI
   recognition_sequence: A/CATGT
 
-- name: PluTI
+- enzyme_name: PluTI
   recognition_sequence: GGCGC/C
 
-- name: PmlI
+- enzyme_name: PmlI
   recognition_sequence: CAC/GTG
 
-- name: PsiI
+- enzyme_name: PsiI-v2
   recognition_sequence: TTA/TAA
 
-- name: PspOMI
+- enzyme_name: PspOMI
   recognition_sequence: G/GGCCC
 
-- name: PstI
+- enzyme_name: PstI-HF®
   recognition_sequence: CTGCA/G
 
-- name: PvuI
+- enzyme_name: PvuI-HF®
   recognition_sequence: CGAT/CG
 
-- name: PvuII
+- enzyme_name: PvuII
   recognition_sequence: CAG/CTG
 
-- name: SacI
+- enzyme_name: SacI-HF®
   recognition_sequence: GAGCT/C
 
-- name: SacII
+- enzyme_name: SacII
   recognition_sequence: CCGC/GG
 
-- name: SalI
+- enzyme_name: SalI-HF®
   recognition_sequence: G/TCGAC
 
-- name: ScaI
+- enzyme_name: ScaI-HF®
   recognition_sequence: AGT/ACT
 
-- name: SfoI
+- enzyme_name: SfoI
   recognition_sequence: GGC/GCC
 
-- name: SmaI
+- enzyme_name: SmaI
   recognition_sequence: CCC/GGG
 
-- name: SnaBI
+- enzyme_name: SnaBI
   recognition_sequence: TAC/GTA
 
-- name: SpeI
+- enzyme_name: SpeI-HF®
   recognition_sequence: A/CTAGT
 
-- name: SphI
+- enzyme_name: SphI-HF®
   recognition_sequence: GCATG/C
 
-- name: SspI
+- enzyme_name: SspI-HF®
   recognition_sequence: AAT/ATT
 
-- name: StuI
+- enzyme_name: StuI
   recognition_sequence: AGG/CCT
 
-- name: TspMI
+- enzyme_name: TspMI
   recognition_sequence: C/CCGGG
 
-- name: XbaI
+- enzyme_name: XbaI
   recognition_sequence: T/CTAGA
 
-- name: XhoI
+- enzyme_name: XhoI
   recognition_sequence: C/TCGAG
 
-- name: ZraI
+- enzyme_name: ZraI
   recognition_sequence: GAC/GTC

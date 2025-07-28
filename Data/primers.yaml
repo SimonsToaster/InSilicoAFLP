@@ -1,0 +1,75 @@
+#------------------------------------------------------------------------
+# PRIMERS
+#------------------------------------------------------------------------
+
+# This file contains information about primers, their name, their core 
+# sequence, the selective bases, and the associated restriction enzyme.
+# primer_name: must be unique in the file.
+# enzyme_name: Enzyme used in the digest
+# core_sequence: the 5' to 3' sequence in upper case letters, only A, T,
+# G, C are allowed. The core sequence is the sequence complementary to the 
+# ligated adapter and  (partially) complementary to the recognition sequence 
+# of the restriction enzyme used in the digest. The selective bases ARE NOT 
+# part of the core sequence.
+# selective bases: the 5' to 3' sequence of the selective bases used to 
+# select a subset of fragments for amplification. Needs to be uppercase 
+# letters and at least one base long. More than three bases are discuraged
+# as loss of specificity occurs. 
+# IUPAC code for nuclotide sequences is supported:
+#
+#       A, C, T, G      normal bases
+#       R               A or G
+#       Y               C or T
+#       S               C or G
+#       W               A or T
+#       K               G or T
+#       M               A or C
+#       B               C or G or T
+#       D               A or G or T
+#       H               A or C or T
+#       V               A or C or G
+#       N               A or C or G or T
+#
+# During execution the program will generate unique primers from degenerated 
+# ones and create fingerprints for each. 
+#
+#Consider the following illustrative example for a primer for an EcoRI (G/AATTC) 
+# digest:
+#
+#       5'-GACTGCGTACC|AATTC|ATY-3'
+#
+# The first 11 bases are complementary to the adapet used, the sequence thus
+# depends on the used adapter used. The next five bases are complementary
+# to the recognition seqeunce of the restriction enzyme used. The next three
+# bases are the selective bases and are not part of the core structure.
+# The cores structure would be: GACTGCGTACCAATTC
+# The selective bases would be: ATY
+# The program would create primers with the selective bases ATC and ATT and
+# generate fingerprints for each. 
+
+#{"Primer name"                  : ["PstI Primer 1", "", "", ""],
+#     "Enzyme name"                  : ["PstI", "EcoRI", "", "PstI"],
+#     "Primer core sequence"         : ["", "", "", ""],
+#     "Selective bases"              : ["", "ATG", "ATG", "AGN"]}
+#)
+
+
+- primer_name: PstI Primer 1
+  enzyme_name: PstI
+  primer_core_seqeunce: GACTGCGTACATGCAG
+  selective_bases: ATN
+
+- primer_name: PstI Primer 2
+  enzyme_name: PstI
+  primer_core_seqeunce: GACTGCGTACATGCAG
+  selective_bases: AGN
+
+- primer_name: EcoRI Primer 1
+  enzyme_name: EcoRI
+  primer_core_seqeunce: GACTGCGTACCAATTC
+  selective_bases: ATG
+
+- primer_name: Mse1 Primer 1
+  enzyme_name: MseI
+  primer_core_seqeunce: GATGAGTCCTGAGTAA
+  selective_bases: ATG

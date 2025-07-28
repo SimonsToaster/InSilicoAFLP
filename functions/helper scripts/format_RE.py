@@ -14,7 +14,7 @@ with open("functions\helper scripts\RE_cat.txt", "r") as infile, open("functions
         sequence = content[0].strip()
         if pattern_four.match(sequence):
             four_string = f'''
-- name: {name}
+- enzyme_name: {name}
   recognition_sequence: {sequence}
 '''
             outfile.write(four_string)
@@ -26,7 +26,7 @@ with open("functions\helper scripts\RE_cat.txt", "r") as infile, open("functions
         sequence = content[0].strip()
         if pattern_six.match(sequence):
             six_string = f'''
-- name: {name}
+- enzyme_name: {name}
   recognition_sequence: {sequence}
 '''
             outfile.write(six_string)
