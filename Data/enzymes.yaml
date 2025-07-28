@@ -1,0 +1,262 @@
+#--------------------------------------------------------------
+# RESTRICTION ENZYMES
+#--------------------------------------------------------------
+
+# This file contains information about restriction enzymes, 
+# their name and their recognition sequence. 
+# NAME: must be unique in the file.
+# RECOGNITION_SEQUENCE: the 5' to 3' recognition sequence in 
+# upper case letters with the cut site indicated by a slash (/).
+# The cut site needs to be inside the recognition sequence, only
+# unambigious sequences (consisting of A, T, C, G) are allowed.
+
+# The enzymes here sorted according to the length of the recognition 
+# sequence and alphabetically by their name. The data was taken from
+# the NEB catalogue. It is therfore NOT KNOWN whether they perform
+# adequately in real life experiments.
+
+#---------------------------------------------------------------
+# 4 BP RECOGNITION SEQUENCES
+#---------------------------------------------------------------
+
+- name: AluI
+  recognition_sequence: AG/CT
+
+- name: BfaI
+  recognition_sequence: C/TAG
+
+- name: BstUI
+  recognition_sequence: CG/CG
+
+- name: CviQI
+  recognition_sequence: G/TAC
+
+- name: DpnI
+  recognition_sequence: GA/TC
+
+- name: HaeIII
+  recognition_sequence: GG/CC
+
+- name: HhaI
+  recognition_sequence: GCG/C
+
+- name: HinP1I
+  recognition_sequence: G/CGC
+
+- name: HpyCH4IV
+  recognition_sequence: A/CGT
+
+- name: HpyCH4V
+  recognition_sequence: TG/CA
+
+- name: MseI
+  recognition_sequence: T/TAA
+
+- name: MspI
+  recognition_sequence: C/CGG
+
+- name: RsaI
+  recognition_sequence: GT/AC
+
+- name: TaqI-v2
+  recognition_sequence: T/CGA
+
+
+#---------------------------------------------------------------
+# 6 BP RECOGNITION SEQUENCES
+#---------------------------------------------------------------
+
+- name: AatII
+  recognition_sequence: GACGT/C
+
+- name: Acc65I
+  recognition_sequence: G/GTACC
+
+- name: AclI
+  recognition_sequence: AA/CGTT
+
+- name: AfeI
+  recognition_sequence: AGC/GCT
+
+- name: AflII
+  recognition_sequence: C/TTAAG
+
+- name: AgeI
+  recognition_sequence: A/CCGGT
+
+- name: ApaI
+  recognition_sequence: GGGCC/C
+
+- name: ApaLI
+  recognition_sequence: G/TGCAC
+
+- name: AseI
+  recognition_sequence: AT/TAAT
+
+- name: AvrII
+  recognition_sequence: C/CTAGG
+
+- name: BamHI
+  recognition_sequence: G/GATCC
+
+- name: BclI
+  recognition_sequence: T/GATCA
+
+- name: BglII
+  recognition_sequence: A/GATCT
+
+- name: BmtI
+  recognition_sequence: GCTAG/C
+
+- name: BsiWI
+  recognition_sequence: C/GTACG
+
+- name: BspEI
+  recognition_sequence: T/CCGGA
+
+- name: BspHI
+  recognition_sequence: T/CATGA
+
+- name: BsrGI
+  recognition_sequence: T/GTACA
+
+- name: BssHII
+  recognition_sequence: G/CGCGC
+
+- name: BstBI
+  recognition_sequence: TT/CGAA
+
+- name: ClaI
+  recognition_sequence: AT/CGAT
+
+- name: DraI
+  recognition_sequence: TTT/AAA
+
+- name: EagI
+  recognition_sequence: C/GGCCG
+
+- name: Eco53kI
+  recognition_sequence: GAG/CTC
+
+- name: EcoRI
+  recognition_sequence: G/AATTC
+
+- name: EcoRV
+  recognition_sequence: GAT/ATC
+
+- name: FspI
+  recognition_sequence: TGC/GCA
+
+- name: HindIII
+  recognition_sequence: A/AGCTT
+
+- name: HpaI
+  recognition_sequence: GTT/AAC
+
+- name: KasI
+  recognition_sequence: G/GCGCC
+
+- name: KpnI
+  recognition_sequence: GGTAC/C
+
+- name: MfeI
+  recognition_sequence: C/AATTG
+
+- name: MluI
+  recognition_sequence: A/CGCGT
+
+- name: MscI
+  recognition_sequence: TGG/CCA
+
+- name: NaeI
+  recognition_sequence: GCC/GGC
+
+- name: NarI
+  recognition_sequence: GG/CGCC
+
+- name: NcoI
+  recognition_sequence: C/CATGG
+
+- name: NdeI
+  recognition_sequence: CA/TATG
+
+- name: NgoMIV
+  recognition_sequence: G/CCGGC
+
+- name: NheI
+  recognition_sequence: G/CTAGC
+
+- name: NruI
+  recognition_sequence: TCG/CGA
+
+- name: NsiI
+  recognition_sequence: ATGCA/T
+
+- name: PciI
+  recognition_sequence: A/CATGT
+
+- name: PluTI
+  recognition_sequence: GGCGC/C
+
+- name: PmlI
+  recognition_sequence: CAC/GTG
+
+- name: PsiI
+  recognition_sequence: TTA/TAA
+
+- name: PspOMI
+  recognition_sequence: G/GGCCC
+
+- name: PstI
+  recognition_sequence: CTGCA/G
+
+- name: PvuI
+  recognition_sequence: CGAT/CG
+
+- name: PvuII
+  recognition_sequence: CAG/CTG
+
+- name: SacI
+  recognition_sequence: GAGCT/C
+
+- name: SacII
+  recognition_sequence: CCGC/GG
+
+- name: SalI
+  recognition_sequence: G/TCGAC
+
+- name: ScaI
+  recognition_sequence: AGT/ACT
+
+- name: SfoI
+  recognition_sequence: GGC/GCC
+
+- name: SmaI
+  recognition_sequence: CCC/GGG
+
+- name: SnaBI
+  recognition_sequence: TAC/GTA
+
+- name: SpeI
+  recognition_sequence: A/CTAGT
+
+- name: SphI
+  recognition_sequence: GCATG/C
+
+- name: SspI
+  recognition_sequence: AAT/ATT
+
+- name: StuI
+  recognition_sequence: AGG/CCT
+
+- name: TspMI
+  recognition_sequence: C/CCGGG
+
+- name: XbaI
+  recognition_sequence: T/CTAGA
+
+- name: XhoI
+  recognition_sequence: C/TCGAG
+
+- name: ZraI
+  recognition_sequence: GAC/GTC

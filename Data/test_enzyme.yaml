@@ -1,0 +1,41 @@
+#--------------------------------------------------------------
+# TEST: RESTRICTION ENZYMES
+#--------------------------------------------------------------
+
+# This file is used to test the import and formating functions for
+# the enzyme data. 
+
+
+    #- name: correct
+    #  recognition_sequence: AG/CT
+
+    #- name: wrong letter
+    #  recognition_sequence: C/nAG
+
+    #- name: no cut site
+    #  recognition_sequence: CGCG
+
+    #- name: two cut sites
+    #  recognition_sequence: G/TA/C
+
+    #- name: duplicated entry
+    #  recognition_sequence: GA/TC
+
+    #- name: duplicated entry
+    #  recognition_sequence: GG/CC
+
+    #- name: starts with
+    #  recognition_sequence: /GGCC
+    
+    #- name: ends with
+    #  recognition_sequence: GGCC/
+
+    #- name: empty sequence
+    #  recognition_sequence:
+    
+    #- name: 
+    #  recognition_sequence: GG/CC
+
+    #- name: missing entry
+
+    #- recognition_sequence: AT/AT

@@ -5,13 +5,15 @@ repos:
   hooks:
     # Run the linter.
     - id: ruff-check
-      exclude: legacy/
+      exclude: legacy/|functions/helper scripts/
     # Run the formatter.
     - id: ruff-format
-      exclude: legacy/
+      exclude: legacy/|functions/helper scripts/
+
 
 - repo: https://github.com/pre-commit/mirrors-mypy
   rev: v1.10.0  # Check https://github.com/pre-commit/mirrors-mypy for latest
   hooks:
     - id: mypy
-      exclude: legacy/
+      additional_dependencies: [types-PyYAML]
+      exclude: legacy/|functions/helper scripts/
