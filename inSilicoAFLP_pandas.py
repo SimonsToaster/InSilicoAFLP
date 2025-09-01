@@ -493,15 +493,15 @@ primer_data = pd.DataFrame(
     {"Primer name"                  : ["PstI Primer 1", "EcoRI Primer 1", "Mse1 Primer 1", "PstI Primer 2"],
      "Enzyme name"                  : ["PstI", "EcoRI", "MseI", "PstI"],
      "Primer core sequence"         : ["GACTGCGTACATGCAG", "GACTGCGTACCAATTC", "GATGAGTCCTGAGTAA", "GACTGCGTACATGCAG"],
-     "Selective bases"              : ["ATT", "ATG", "ATG", "AGN"]}
+     "Selective bases"              : ["N", "N", "ATG", "AGN"]}
 )
 
 ###Jobs
 job_definition = pd.DataFrame(
-    {"Method"                       : ["single", "double", "triple"],
-     "Digestion Enzymes"            : ["PstI","PstI+EcoRI", "PstI+EcoRI+MseI"],
-     "Adaptors"                     : ["PstI Adaptor 1", "PstI Adaptor 1+EcoRI Adaptor 1", "PstI Adaptor 1+EcoRI Adaptor 1"],
-     "Primers"                      : ["PstI Primer 1", "PstI Primer 1+EcoRI Primer 1", "PstI Primer 1+EcoRI Primer 1"]}
+    {"Method"                       : ["single", "double"],
+     "Digestion Enzymes"            : ["PstI","PstI+EcoRI"],
+     "Adaptors"                     : ["PstI Adaptor 1", "PstI Adaptor 1+EcoRI Adaptor 1"],
+     "Primers"                      : ["PstI Primer 1", "PstI Primer 1+EcoRI Primer 1"]}
 )
 
 
@@ -548,7 +548,7 @@ sys.stdout = original_stdout
 print("Finished generating job queue")
 
 print("Start reading genome")
-path_genome = "Support\\GCA_000002985.3_WBcel235_genomic.fasta"
+path_genome = "Support\\ECPlambda.fasta"
 absolute_path = os.path.dirname(__file__)
 relative_path_genome = path_genome
 full_path_genome = os.path.join(absolute_path, relative_path_genome)
