@@ -4,3 +4,4 @@ Support/ncbi_dataset/
 .venv/
 Support/GCA_000002985.3_WBcel235_genomic.fasta
 output.txt
+logfile.log

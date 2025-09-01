@@ -1,0 +1,42 @@
+
+- enzyme_name: AluI
+  recognition_sequence: AG/CT
+
+- enzyme_name: BfaI
+  recognition_sequence: C/TAG
+
+- enzyme_name: BstUI
+  recognition_sequence: CG/CG
+
+- enzyme_name: CviQI
+  recognition_sequence: G/TAC
+
+- enzyme_name: DpnI
+  recognition_sequence: GA/TC
+
+- enzyme_name: HaeIII
+  recognition_sequence: GG/CC
+
+- enzyme_name: HhaI
+  recognition_sequence: GCG/C
+
+- enzyme_name: HinP1I
+  recognition_sequence: G/CGC
+
+- enzyme_name: HpyCH4IV
+  recognition_sequence: A/CGT
+
+- enzyme_name: HpyCH4V
+  recognition_sequence: TG/CA
+
+- enzyme_name: MseI
+  recognition_sequence: T/TAA
+
+- enzyme_name: MspI
+  recognition_sequence: C/CGG
+
+- enzyme_name: RsaI
+  recognition_sequence: GT/AC
+
+- enzyme_name: TaqI-v2
+  recognition_sequence: T/CGA
